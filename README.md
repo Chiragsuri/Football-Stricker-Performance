@@ -47,10 +47,10 @@ Versatility: Measures the striker's ability to adapt to different tactical syste
 
 Penalty Success Rate: The efficiency of the striker from the penalty spot, crucial in tight matches.
 
-![](/docs/assets/FSPKPI.png)
-![](/docs/assets/FSPComparison.png)
-![](/docs/assets/FSPToolTip.png)
-
 Impact on Team Performance: Reflects how the team's results and overall attacking play are influenced by the striker's presence.
 
 Off-field Conduct: Measures the striker's professionalism, leadership, and behavior, which can impact their overall performance and value to the team.
+
+![](/docs/assets/FSPKPI.png)
+![](/docs/assets/FSPComparison.png)
+![](/docs/assets/FSPToolTip.png)
