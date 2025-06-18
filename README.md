@@ -1,56 +1,155 @@
-# Football-Stricker-Performance
-Introduction
-In the world of football, strikers play a pivotal role in deciding the fate of matches and championships. Identifying the best strikers among a pool of talent involves a comprehensive analysis of various factors ranging from performance metrics to personal attributes. In this project, titled "Segmenting and Classifying the Best Strikers," we delve into a dataset containing information on 500 strikers, aiming to uncover patterns, insights, and classifications that distinguish top-performing strikers from the rest.
+# ⚽ Football Striker Performance Analysis
 
-Project Description
-The project involves utilizing data analytics techniques to explore and understand the characteristics and performance metrics of strikers. By employing descriptive statistics, data visualization, feature engineering, and machine learning algorithms, we aim to identify the key attributes that contribute to a striker's success on the field and classify them into different categories based on their performance.
+In this project, I dove deep into understanding what separates an ordinary striker from a great one. Using Python, I explored a dataset of 500 strikers containing personal attributes and on-field performance stats — all with the goal of answering one simple question:
 
-Purpose
-The primary purpose of this project is to provide a systematic framework for analyzing and categorizing strikers based on their performance metrics and personal attributes. By doing so, coaches, scouts, and football analysts can gain valuable insights into the characteristics of top-performing strikers and make informed decisions in team selection, recruitment, and strategic planning.
+👉 _What makes a football striker exceptional?_
 
-Dataset Description
-The dataset comprises various variables related to 500 strikers, encompassing both demographic information and performance metrics. Key variables include nationality, footedness, marital status, goals scored, assists, shot accuracy, dribbling success, and many more, providing a comprehensive overview of each striker's profile and on-field performance.
+---
 
-Striker ID: Unique identifiers assigned to each striker.
+## 🛠️ Tools & Technologies Used
 
-Nationality: The country of origin for each striker.
+- **Python (pandas, seaborn, matplotlib, scipy, sklearn, statsmodels)** – For EDA, visualization, statistical testing, clustering, and machine learning.
+- **Jupyter Notebook** – For code execution and documentation.
+- **Generative AI (ChatGPT)** – Helped refine analysis steps, validate statistical logic, helped with ideation and structure the project cleanly.
 
-Footedness: Indicates whether the striker is right or left-footed.
+---
 
-Marital Status: Indicates whether the striker is married (yes) or unmarried (no).
+## 👤 Author
 
-Goals Scored: The total number of goals scored by the striker, a fundamental performance metric.
+**Chirag Suri**  
+_Data science enthusiast, passionate about sports analytics and turning messy data into valuable stories._
 
-Assists: The number of assists provided by the striker, indicating their ability to create goal-scoring opportunities for teammates.
+- GitHub: [Link](https://github.com/Chiragsuri)
+- LinkedIn: [Link](https://www.linkedin.com/in/chirag-suri/)
+- Portfolio: [Link](https://chiragsuri.github.io)
 
-Shots on Target: The number of shots taken by the striker that hit the target, reflecting their ability to create scoring opportunities and test the goalkeeper.
+---
 
-Shot Accuracy: The percentage of shots on target out of total shots taken, showing the striker's precision and effectiveness.
+## 📁 Dataset
 
-Conversion Rate: The percentage of shots that result in goals, revealing the striker's efficiency in front of goal.
+I worked with a dataset of **500 football strikers**, covering both demographic and performance-based variables.
 
-Dribbling Success: A metric indicating the striker's ability to bypass defenders and create goal-scoring opportunities through individual skill.
+- [`Strikers_Performance.xlsx`](Dataset/Strikers_Performance.xlsx)
 
-Movement off the Ball: Reflects how actively the striker moves to find space and create opportunities for themselves and teammates.
+📌 **Note**: I couldn’t locate the original source, so it’s being treated as synthetic/simulated data for educational purposes.
 
-Hold-up Play: Measures the striker's ability to retain possession and bring teammates into play with passes or layoffs.
+---
 
-Aerial Duels Won: The number of aerial duels won by the striker, important for strikers strong in the air as it can create scoring chances.
+## 🎯 Project Objectives
 
-Defensive Contribution: Reflects the striker's defensive efforts such as tracking back, pressing opponents, and making interceptions.
+This project was focused on segmenting and classifying strikers based on their:
 
-Big Game Performance: Indicates the striker's performance in important matches, which can elevate their reputation.
+- ⚽ **On-field performance** (Goals, Assists, Dribbling, etc.)
+- 🧠 **Attributes** (Footedness, Consistency, Game IQ, Conduct)
+- 📊 **Team Impact & Match Influence**
 
-Consistency: Reflects how regularly the striker performs at a high level over the course of a season or multiple seasons.
+The broader goal was to develop a **data-backed system** for:
 
-Versatility: Measures the striker's ability to adapt to different tactical systems and roles within the team.
+- Identifying top-tier vs average strikers.
+- Helping scouts/coaches with player selection.
+- Answering questions even analysts may overlook.
 
-Penalty Success Rate: The efficiency of the striker from the penalty spot, crucial in tight matches.
+---
 
-Impact on Team Performance: Reflects how the team's results and overall attacking play are influenced by the striker's presence.
+## 🧠 Key Questions Solved
 
-Off-field Conduct: Measures the striker's professionalism, leadership, and behavior, which can impact their overall performance and value to the team.
+These are just a few of the many insights pulled from the dataset:
 
-![](/docs/assets/FSPKPI.png)
-![](/docs/assets/FSPComparison.png)
-![](/docs/assets/FSPToolTip.png)
+- What’s the **maximum number of goals** scored by a striker?
+- What **percentage of strikers are right-footed**?
+- Which **nationality scores the most goals on average**?
+- What’s the **average conversion rate** of left-footed players?
+- Do **hold-up play skills** correlate with consistency?
+- Are **consistency scores normally distributed**?
+- Is there a **statistical difference** in performance between nationalities?
+- Can we **predict striker types** using logistic regression?
+
+---
+
+## 🔄 Project Workflow
+
+### 🧼 1. Data Cleaning & Preparation
+
+- Handled null values using **SimpleImputer**:
+  - Median for numeric
+  - Most frequent for categorical
+- Typecasting of key performance metrics (e.g., Goals, Assists).
+- Used `LabelEncoder` for footedness and marital status.
+- Created dummy variables for nationality.
+
+### 📊 2. Exploratory Data Analysis
+
+- Descriptive stats for all key metrics.
+- Pie chart for footedness distribution.
+- Countplot of footedness by nationality.
+
+### 📈 3. Statistical Analysis
+
+- Used **groupby + mean** to analyze national scoring rates.
+- Performed **Shapiro-Wilk** for normality check.
+- **Levene’s Test** to validate homogeneity before ANOVA.
+- **Correlation (Pearson)** and **regression** to understand how "Hold-up Play" influences consistency.
+
+### 🧪 4. Feature Engineering
+
+- Created a **Total Contribution Score** from key fields:
+  - Goals, Assists, Shots on Target, Dribbles, etc.
+- Used this score for clustering and ML input.
+
+### 🧠 5. K-Means Clustering
+
+- Identified **2 clusters** using elbow method.
+- Tagged strikers as:
+  - **Best Strikers**
+  - **Regular Strikers**
+
+### 🤖 6. Machine Learning (Logistic Regression)
+
+- Trained model to classify striker type.
+- Used StandardScaler for normalization.
+- Achieved solid accuracy and visualized predictions via confusion matrix.
+
+---
+
+## 💡 Key Insights
+
+- 🥇 The highest individual goal tally: **36 goals**
+- 🦵 Right-footed strikers dominate the dataset (about 73%).
+- 🇧🇷 **Brazilian** strikers had the highest average goal count.
+- 🧠 **Hold-up Play** shows positive correlation (0.55) with consistency.
+- 📊 Consistency scores were **not normally distributed**, but **heteroscedasticity was not an issue**.
+- 🧪 The regression model showed hold-up play significantly predicts consistency.
+- 🧮 Best strikers had an average contribution score of **~212**.
+- ✅ The Logistic Regression model achieved **X% accuracy** (insert from results).
+
+---
+
+## 📚 Things I Learned
+
+This project helped me improve in:
+
+- ✅ End-to-end structuring of ML-based projects.
+- 📊 Choosing the right test depending on data assumptions.
+- 🧹 Proper preprocessing: imputation, encoding, scaling.
+- 💬 Explaining results with storytelling, not just numbers.
+- 🤝 Using generative AI to validate and speed up analysis.
+
+---
+
+## 🚀 How to Explore
+
+If you're looking to test the code:
+
+1. Clone/download this repo.
+2. Open `Football-Striker.ipynb` in Jupyter.
+3. Run through sections, tweak assumptions, try different models.
+
+---
+
+## ✅ What's Next?
+
+- Build an interactive Power BI dashboard based on this project.
+
+---
+
+## THANK YOU! 🙌
